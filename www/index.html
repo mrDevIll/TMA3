@@ -23,22 +23,46 @@
         <title>Taxi Sharing</title>
     </head>
     <body>
-    <div class="app">
+    <div class="app" style="margin: 0 auto; text-align: center;">
         <h1>Taxi Sharing</h1>
         <div>
 		<!---
 			TODO: add text and form entry methods to capture relevant details
 		-->
-		<label for="name">Your OUCU number:</label>
+		<!-- I added some style to have the elements alligned to the center -->
+			<label for="oucu">Insert your <strong>OUCU</strong></label>
 			<input type="text" id="oucu" name="oucu" required minlength="4" maxlength="8" placeholder="e.g. ABC123" size="10"> 
-			<button>Register</button>
+			<br /><hr />
+			<label for="starting-time" >Select starting date and start time</label>	
+			<input type="datetime-local" id="starting-time" name="starting-time" required> <br />
+			<br/>
+			<input type="number" name="hours" id="hours" min="0" max="24" />
+			<label for="hours">Waiting time in hours max 24h. e.g. </label>
+			<hr />
+			
+			<label for="destination">Select your Destination</label><br />
+			<div>
+				<select name="destination" id="destination">
+					<option value="">--Please choose a destination--</option>
+					<option value="Milton Keynes Central Station">Milton Keynes Central Station</option>
+					<option value="Open University campus">Open University campus</option>
+				</select>
+			</div>
+			<hr />
+
 
         </div>
         <div>
 		<!---
 			TODO: add buttons to allow the various functional requirements to be enacted
 		-->
-        </div>
+		<label for="register"><strong>New user</strong></label>
+		<button id="register" onclick="#">Register OUCU</button><hr />
+		<strong>Your trip</strong>
+		<button>offer to share</button> <button>request to share</button><button>update map</button>
+		<button>cancel request or offers</button><button>set map offline</button>
+
+		</div>
 		<!---
 			TODO: add a placeholder for the HERE map
 		-->
